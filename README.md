@@ -72,7 +72,7 @@ These scripts will build the Java backend, start the server, and launch the fron
    npm run dev
    ```
 
-   The frontend will be available at [http://localhost:3000](http://localhost:3001).
+   The frontend will be available at [http://localhost:3000](http://localhost:3000).
 
 ## How It Works
 
