@@ -4,7 +4,7 @@ import p2p.controller.FileController;
 import java.io.IOException;
 
 /**
- * PeerLink - P2P File Sharing Application
+ * LinkMates - P2P File Sharing Application
  */
 public class App {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class App {
             FileController fileController = new FileController(8080);
             fileController.start();
             
-            System.out.println("PeerLink server started on port 8080");
+            System.out.println("LinkMates server started on port 8080");
             System.out.println("UI available at http://localhost:3000");
             
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {

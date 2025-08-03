@@ -1,6 +1,6 @@
-# PeerLink UI
+# LinkMates UI
 
-This is the frontend UI for the PeerLink P2P file sharing application. It's built with Next.js, TypeScript, and Tailwind CSS.
+This is the frontend UI for the LinkMates P2P file sharing application. It's built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Features
 

@@ -14,7 +14,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<'upload' | 'download'>('upload');
 
   const handleFileUpload = async (file: File) => {
-    setUploadedFile(file);
+    setUploadedFile(file); 
     setIsUploading(true);
     
     try {

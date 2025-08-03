@@ -26,7 +26,7 @@ public class FileController {
     public FileController(int port) throws IOException {
         this.fileSharer = new FileSharer();
         this.server = HttpServer.create(new InetSocketAddress(port), 0);
-        this.uploadDir = System.getProperty("java.io.tmpdir") + File.separator + "peerlink-uploads";
+        this.uploadDir = System.getProperty("java.io.tmpdir") + File.separator + "LinkMates-uploads";
         this.executorService = Executors.newFixedThreadPool(10);
         
         File uploadDirFile = new File(uploadDir);
