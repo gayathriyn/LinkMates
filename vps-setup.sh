@@ -37,8 +37,8 @@ sudo apt install -y maven
 
 # Clone repository (uncomment and modify if using Git)
 # echo "Cloning repository..."
-# git clone https://github.com/yourusername/peerlink.git
-# cd peerlink
+# git clone https://github.com/yourusername/LinkMates.git
+# cd LinkMates-main
 
 # Build backend
 echo "Building Java backend..."
@@ -101,7 +101,7 @@ server {
 EOF
 
 # Create the symbolic link to enable the LinkMates site
-sudo ln -sf /etc/nginx/sites-available/peerlink /etc/nginx/sites-enabled/peerlink
+sudo ln -sf /etc/nginx/sites-available/LinkMates /etc/nginx/sites-enabled/peerlink
 
 sudo nginx -t
 if [ $? -eq 0 ]; then
@@ -121,12 +121,12 @@ fi
 echo "Starting backend with PM2..."
 # Ensure all dependencies are in the classpath
 CLASSPATH="target/p2p-1.0-SNAPSHOT.jar:$(mvn dependency:build-classpath -DincludeScope=runtime -Dmdep.outputFile=/dev/stdout -q)"
-pm2 start --name peerlink-backend java -- -cp "$CLASSPATH" p2p.App
+pm2 start --name LinkMates-backend java -- -cp "$CLASSPATH" p2p.App
 
 # Start frontend with PM2
 echo "Starting frontend with PM2..."
 cd ui
-pm2 start npm --name peerlink-frontend -- start
+pm2 start npm --name LinkMates-frontend -- start
 cd ..
 
 # Save PM2 configuration
