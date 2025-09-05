@@ -138,7 +138,7 @@ pm2 startup
 # Follow the instructions printed by the above command
 
 echo "=== Setup Complete ==="
-echo "PeerLink is now running on your VPS!"
+echo "LinkMates is now running on your VPS!"
 echo "Backend API: http://localhost:8080 (Internal - accessed via Nginx)"
 echo "Frontend: http://your_lightsail_public_ip (Access via your instance's IP address)"
 echo "You can access your application using your Lightsail instance's public IP address in your browser."
