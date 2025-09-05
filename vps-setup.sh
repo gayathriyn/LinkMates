@@ -37,8 +37,8 @@ sudo apt install -y maven
 
 # Clone repository (uncomment and modify if using Git)
 # echo "Cloning repository..."
-# git clone https://github.com/yourusername/LinkMates.git
-# cd LinkMates-main
+git clone https://github.com/gayathriyn/LinkMates-main.git
+cd LinkMates-main
 
 # Build backend
 echo "Building Java backend..."
@@ -60,9 +60,9 @@ if [ -e /etc/nginx/sites-enabled/default ]; then
     echo "Removed default Nginx site configuration."
 fi
 
-# Create the peerlink configuration file with the correct content
-echo "Creating /etc/nginx/sites-available/peerlink..."
-cat <<EOF | sudo tee /etc/nginx/sites-available/peerlink
+# Create the LinkMates configuration file with the correct content
+echo "Creating /etc/nginx/sites-available/LinkMates..."
+cat <<EOF | sudo tee /etc/nginx/sites-available/LinkMates
 server {
     listen 80;
     server_name _; # Catch-all for HTTP requests
@@ -101,14 +101,14 @@ server {
 EOF
 
 # Create the symbolic link to enable the LinkMates site
-sudo ln -sf /etc/nginx/sites-available/LinkMates /etc/nginx/sites-enabled/peerlink
+sudo ln -sf /etc/nginx/sites-available/LinkMates /etc/nginx/sites-enabled/LinkMates
 
 sudo nginx -t
 if [ $? -eq 0 ]; then
     sudo systemctl restart nginx
     echo "Nginx configured and restarted successfully."
 else
-    echo "Nginx configuration test failed. Please check /etc/nginx/nginx.conf and /etc/nginx/sites-available/peerlink."
+    echo "Nginx configuration test failed. Please check /etc/nginx/nginx.conf and /etc/nginx/sites-available/LinkMates."
     exit 1
 fi
 
